@@ -58,8 +58,8 @@ automatically rewrite the message of `"full_name" is required` to
 
 If there are multiple validation error messages, such as:
 
-* `"full_name" is required`
-* `"age" is not at least (18)`
+* `full_name is required`
+* `age is not at least (18)`
 
 Then it will rewrite the error message to `Full name is required, Age is not at least (18)`.
 
