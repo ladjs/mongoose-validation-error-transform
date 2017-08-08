@@ -1,0 +1,52 @@
+{
+  "name": "mongoose-validation-error-transform",
+  "description": "Automatically transform Mongoose validation error message(s) to a humanized and readable format",
+  "version": "0.0.1",
+  "author": "Nick Baugh <niftylettuce@gmail.com>",
+  "bugs": "https://github.com/niftylettuce/mongoose-validation-error-transform/issues",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-crocodile": "^1.0.0",
+    "eslint-config-crocodile": "^1.0.0"
+  },
+  "engines": {
+    "node": ">= 6.x"
+  },
+  "homepage": "https://github.com/niftylettuce/mongoose-validation-error-transform",
+  "keywords": [
+    "mongoose",
+    "validation",
+    "error",
+    "transform",
+    "messages",
+    "unique",
+    "beautiful",
+    "errors",
+    "err",
+    "handler",
+    "handling",
+    "pretty",
+    "print",
+    "alert",
+    "mongodb",
+    "mongo",
+    "custom",
+    "parse",
+    "parser",
+    "parsing"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": "niftylettuce/mongoose-validation-error-transform",
+  "scripts": {
+    "compile": "rm -rf lib/ && babel -d lib src",
+    "lint": "eslint .",
+    "prepublish": "npm run test",
+    "test": "npm run lint"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "underscore.string": "^3.3.4"
+  }
+}
