@@ -53,8 +53,8 @@ mongoose.plugin(mongooseValidationErrorTransform, {
 
 If you have a Mongoose schema defined with a required String field `full_name`,
 and if there is an error with a missing `full_name` on a document - then it will
-automatically rewrite the message of `"full_name" is required` to
-`"Full name is required"`.
+automatically rewrite the message of `full_name is required` to
+`Full name is required`.
 
 If there are multiple validation error messages, such as:
 
