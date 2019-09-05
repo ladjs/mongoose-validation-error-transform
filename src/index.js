@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const capitalize = require('capitalize');
-const humanize = require('humanize');
+const humanize = require('humanize-string');
 
 function mongooseValidationErrorTransform(schema, options) {
   options = _.defaults(options || {}, {
