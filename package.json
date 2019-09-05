@@ -4,49 +4,108 @@
   "version": "0.0.2",
   "author": "Nick Baugh <niftylettuce@gmail.com>",
   "bugs": "https://github.com/niftylettuce/mongoose-validation-error-transform/issues",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "contributors": [
+    "Nick Baugh <niftylettuce@gmail.com>"
+  ],
+  "dependencies": {
+    "capitalize": "^2.0.0",
+    "humanize": "^0.0.9",
+    "lodash": "^4.17.15"
+  },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-crocodile": "^1.0.0",
-    "eslint-config-crocodile": "^1.0.0"
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "eslint": "^6.3.0",
+    "eslint-config-xo-lass": "^1.0.3",
+    "eslint-plugin-node": "^10.0.0",
+    "fixpack": "^2.3.1",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
+    "remark-cli": "^7.0.0",
+    "remark-preset-github": "^0.0.16",
+    "rimraf": "^3.0.0",
+    "xo": "^0.24.0"
   },
   "engines": {
     "node": ">= 6.x"
   },
+  "files": [
+    "lib "
+  ],
   "homepage": "https://github.com/niftylettuce/mongoose-validation-error-transform",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "keywords": [
-    "mongoose",
-    "validation",
-    "error",
-    "transform",
-    "messages",
-    "unique",
+    "alert",
     "beautiful",
-    "errors",
+    "custom",
     "err",
+    "error",
+    "errors",
     "handler",
     "handling",
-    "pretty",
-    "print",
-    "alert",
-    "mongodb",
+    "messages",
     "mongo",
-    "custom",
+    "mongodb",
+    "mongoose",
     "parse",
     "parser",
-    "parsing"
+    "parsing",
+    "pretty",
+    "print",
+    "transform",
+    "unique",
+    "validation"
   ],
   "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "xo --fix",
+      "git add"
+    ],
+    "*.md": [
+      "remark . -qfo",
+      "git add"
+    ],
+    "package.json": [
+      "fixpack",
+      "git add"
+    ]
+  },
   "main": "lib/index.js",
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-github"
+    ]
+  },
   "repository": "niftylettuce/mongoose-validation-error-transform",
   "scripts": {
-    "compile": "rm -rf lib/ && babel -d lib src",
-    "lint": "eslint .",
-    "prepublish": "npm run test",
-    "test": "npm run lint"
+    "compile": "rimraf lib && babel src --out-dir lib && eslint --no-inline-config -c .lib.eslintrc lib",
+    "lint": "xo && remark . -qfo",
+    "test": "npm run lint && npm run compile"
   },
-  "dependencies": {
-    "lodash": "^4.17.4",
-    "underscore.string": "^3.3.4"
+  "xo": {
+    "prettier": true,
+    "space": true,
+    "extends": [
+      "xo-lass"
+    ]
   }
 }

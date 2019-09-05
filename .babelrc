@@ -1,5 +1,9 @@
 {
-  "presets": [ "crocodile" ],
-  "sourceMaps": "inline",
-  "plugins": [ "add-module-exports" ]
+  "presets": [
+    ["@babel/env", {
+      "targets": {
+        "node": "6.4.0"
+      }
+    }]
+  ]
 }

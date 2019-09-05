@@ -1,9 +1,8 @@
-
-const s = require('underscore.string');
 const _ = require('lodash');
+const capitalize = require('capitalize');
+const humanize = require('humanize');
 
-export default function mongooseValidationErrorTransform(schema, options) {
-
+function mongooseValidationErrorTransform(schema, options) {
   options = _.defaults(options || {}, {
     capitalize: true,
     humanize: true,
@@ -11,28 +10,32 @@ export default function mongooseValidationErrorTransform(schema, options) {
   });
 
   function humanizePath(err, doc, next) {
-
-    if (err.name !== 'ValidationError' || !_.isObject(err.errors))
+    if (err.name !== 'ValidationError' || !_.isObject(err.errors)) {
       return next(err);
+    }
 
-    err.message = options.transform(_.map(
-      _.values(err.errors),
-      error => {
-        if (!_.isString(error.path))
-          return options.capitalize ? s.capitalize(error.message) : error.message;
-        if (options.humanize)
+    err.message = options.transform(
+      _.map(_.values(err.errors), error => {
+        if (!_.isString(error.path)) {
+          return options.capitalize ? capitalize(error.message) : error.message;
+        }
+
+        if (options.humanize) {
           error.message = error.message.replace(
             new RegExp(error.path, 'g'),
-            s.humanize(error.path)
+            humanize(error.path)
           );
-        if (options.capitalize)
-          error.message = s.capitalize(error.message);
+        }
+
+        if (options.capitalize) {
+          error.message = capitalize(error.message);
+        }
+
         return error.message;
-      }
-    ));
+      })
+    );
 
     next(err);
-
   }
 
   schema.post('save', humanizePath);
@@ -41,5 +44,6 @@ export default function mongooseValidationErrorTransform(schema, options) {
   schema.post('insertMany', humanizePath);
 
   return schema;
-
 }
+
+module.exports = mongooseValidationErrorTransform;

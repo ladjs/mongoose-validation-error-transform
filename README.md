@@ -1,4 +1,3 @@
-
 # mongoose-validation-error-transform
 
 [![Slack Status][slack-image]][slack-url]
@@ -85,18 +84,31 @@ This would output the following for the previous example:
 
 ## License
 
-[MIT][license-url]
+[MIT](LICENSE) © Nick Baugh
 
+
+## 
 
 [license-image]: http://img.shields.io/badge/license-MIT-blue.svg
+
 [license-url]: LICENSE
+
 [npm-image]: https://img.shields.io/npm/v/mongoose-validation-error-transform.svg
+
 [npm-url]: https://npmjs.org/package/mongoose-validation-error-transform
+
 [crocodile-url]: https://crocodilejs.com
+
 [standard-image]: https://img.shields.io/badge/code%20style-standard%2Bes7-brightgreen.svg
+
 [standard-url]: https://github.com/crocodilejs/eslint-config-crocodile
+
 [slack-image]: http://slack.crocodilejs.com/badge.svg
+
 [slack-url]: http://slack.crocodilejs.com
+
 [mongoose]: https://github.com/Automattic/mongoose
+
 [comment]: https://github.com/Automattic/mongoose/issues/2284#issuecomment-320810641
+
 [mongoose-beautiful-unique-validation]: https://github.com/matteodelabre/mongoose-beautiful-unique-validation
