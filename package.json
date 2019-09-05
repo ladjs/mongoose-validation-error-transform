@@ -1,7 +1,7 @@
 {
   "name": "mongoose-validation-error-transform",
   "description": "Automatically transform Mongoose validation error message(s) to a humanized and readable format",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Nick Baugh <niftylettuce@gmail.com>",
   "bugs": "https://github.com/niftylettuce/mongoose-validation-error-transform/issues",
   "commitlint": {
