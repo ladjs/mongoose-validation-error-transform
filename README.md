@@ -103,9 +103,9 @@ This would output the following for the previous example:
 
 [standard-url]: https://github.com/crocodilejs/eslint-config-crocodile
 
-[slack-image]: https://slack.crocodilejs.com/badge.svg
+[slack-image]: https://img.shields.io/badge/chat-join%20slack-brightgreen
 
-[slack-url]: https://slack.crocodilejs.com
+[slack-url]: https://join.slack.com/t/ladjs/shared_invite/zt-fqei6z11-Bq2trhwHQxVc5x~ifiZG0g
 
 [mongoose]: https://github.com/Automattic/mongoose
 
