@@ -15,7 +15,7 @@
   "dependencies": {
     "capitalize": "^2.0.0",
     "humanize-string": "^2.1.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
