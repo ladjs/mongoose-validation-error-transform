@@ -13,7 +13,7 @@
     "Nick Baugh <niftylettuce@gmail.com>"
   ],
   "dependencies": {
-    "capitalize": "^2.0.0",
+    "capitalize": "^2.0.4",
     "humanize-string": "^2.1.0",
     "lodash": "^4.17.15"
   },
